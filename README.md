@@ -61,9 +61,10 @@ qrencode 'hello' -o - | base64 -w 0
 ```
 ![encoding with base64](images/image1.png)
 
-Create a bash script inside the /usr/lib/cgi-bin/lab5/ directory called qrcode.sh
-that takes as its argument a message and outputs an HTML document containing a QR
-code with the message.  An example of the script can be accessed at 
+Create a bash script inside the /usr/lib/cgi-bin/security-base64-encoding/
+directory called `qrcode.sh` that takes as its argument a message and outputs an
+HTML document containing a QR code with the message.  An example of the script can
+be accessed at
 https://learn.operatoroverload.com/~jmadar/security-base64-encoding/qrcode.sh?hello 
 
 For marking purposes your html document should be accessible using link:
