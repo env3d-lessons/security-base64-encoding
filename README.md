@@ -43,8 +43,15 @@ css background:  https://css-tricks.com/data-uris/
 
 # QR Code App
 
-Let’s create a simple QRCode generation api.  Start by installing the qrencode
-program on your Linux server
+Let’s create a simple QRCode generation api.  
+
+Start codespaces for this assignment, the linux container is preconfigured for you.
+
+You will see that there is already a `qrcode.sh` file, you will be completing this 
+script.
+
+Within the codepsaces environment is a command line program called qrencode.  I 
+installed it using the following command.
 
 ```
 sudo apt install qrencode
@@ -61,27 +68,24 @@ qrencode 'hello' -o - | base64 -w 0
 ```
 ![encoding with base64](images/image1.png)
 
-Create a bash script inside the /usr/lib/cgi-bin/security-base64-encoding/
-directory called `qrcode.sh` that takes as its argument a message and outputs an
-HTML document containing a QR code with the message.  An example of the script can
-be accessed at
+Complete the `qrcode.sh` file so that it'll take as its argument a message and 
+outputs an HTML document containing a QR code with the message.  
+An example of the script can be accessed at
 https://learn.operatoroverload.com/~jmadar/security-base64-encoding/qrcode.sh?hello 
 
-For marking purposes your html document should be accessible using link:
-https://xxx.wmdd4950.com/cgi-bin/security-base64-encoding/qrcode.sh?hello
-
-# Hand-in
-
-Clone the assignment repo into your `${HOME}` directory, then execute pytest
-in the `${HOME}/${ASSIGNMENT_REPO}/` to check if you got everything correct,
+You can inspect the output of your `qrcode.sh` file by using curl to localhost, 
 as follows:
 
 ```
-cd ~
-git clone ${ASSIGNMENT_REPO}
-cd ${ASSIGNMENT_REPO}
-pytest
+curl localhost/cgi-bin/qrcode.sh?example
 ```
+
+You can test the output by using the exposed PORTS in codespaces.
+
+# Hand-in
+
+Execute `pytest` from the top level of your repo inside codespaces
+to check if you got everything correct, as follows:
 
 When you are satisified, run the following commands to submit:
 
